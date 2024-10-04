@@ -44,35 +44,78 @@ public class UnboundedInt {
       head = head.getLink().getLink();// erases the 0's;
     }
     }
-    
-  // public UnboundedInt add (UnboundedInt userInput){
-  //     UnboundedInt 
+  /* getters and setters */
+  public int getManyNodes()
+  {
+    return this.manyNodes;
+  }
+  public IntNode head()
+  {
+    return this.head;
+  }
+  public IntNode tail()
+  {
+    return this.tail;
+  }
+  public IntNode cursor()
+  {
+    return this.cursor;
+  }
+  public void setManyNodes(int givenAmount)
+  {
+    this.manyNodes = givenAmount;//
+  }
+  public void setHead(IntNode givenHead)
+  {
+    this.head = givenHead;//
+  }
+  public void setTail(IntNode givenTail)
+  {
+    this.tail = givenTail;//
+  }
+  public void setCursor(IntNode givenAddress)
+  {
+    this.cursor = givenAddress; //
+  }
+  // public UnboundedInt add(UnboundedInt userInput)
+  // {
+  //     //UnboundedInt 
       
   
   // }
-  
-  
-  
-  
+  public void advance()
+  {
+    //
+  }
+  public void start()
+  {
+    //
+  }
+  public void addEnd()
+  {
+    //
+  }
   public String toString(){
     String returnString = "";
     IntNode cursor;
   
     for (cursor = head; cursor != null; cursor = cursor.getLink()) {
       if(cursor.getLink() != null){
-         if(cursor.getLink().getLink() == null && head.getData()==-1){
+          if(cursor.getLink().getLink() == null && head.getData()==-1){
             returnString = returnString +  tail.getData();
             cursor = cursor.getLink();
-         } else{
-         if(cursor.getData() <= 9){
-            returnString = "," + "00" + cursor.getData() + returnString;
-         } else if (cursor.getData() <= 99){
-            returnString = "," +"0" + cursor.getData() + returnString;
-         } else{
-            returnString =  "," + cursor.getData() + returnString;
-         }
-         }
-      } else{
+          } else{
+          if(cursor.getData() <= 9){
+              returnString = "," + "00" + cursor.getData() + returnString;
+          } else if (cursor.getData() <= 99){
+              returnString = "," +"0" + cursor.getData() + returnString;
+          } else{
+              returnString =  "," + cursor.getData() + returnString;
+          }
+        }
+      } 
+      else
+      {
          returnString = cursor.getData() + returnString;
          
       
