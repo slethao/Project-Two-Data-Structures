@@ -77,12 +77,42 @@ public class UnboundedInt {
   {
     this.cursor = givenAddress; //
   }
-  // public UnboundedInt add(UnboundedInt userInput)
-  // {
-  //     //UnboundedInt 
+  /*/ public UnboundedInt add(UnboundedInt userInput) {
+      UnboundedInt intSum = new UnboundedInt();
+      UnboundedInt cursor1 = this.head;
+      UnboundedInt cursor2 = userInput.head;
+      boolean cursor1Null = false;
+      boolean cursor2Null = false;
+      int carryOver = 0;
+
+      if(cursor1 == null){
+        cursor1Null = true;
+      } else if(cursor2 == null){
+        cursor2Null = true;
+      }
+
+      while(cursor1Null == false || cursor2Null == false){
+
+        if(cursor1Null == true){
+            sum = carryOver + cursor2.getData();
+        } else if(cursor2null == true)
+            sum = carryOver + cursor1.getData();
+        } else{
+            sum = carryOver + cursor1.getData() + cursor2.getData();
+        }
+        carryOver = 0;
+
+        if(sum > 999){ 
+            sum = sum - 1000;
+            carryOver++;
+        } 
+        intSum.head.addAfter((String) sum)); typecasting it into a string
+
+        if(cursor.getLink() != null)
+
       
   
-  // }
+  }/*/ 
   public void advance()
   {
     //
@@ -95,7 +125,8 @@ public class UnboundedInt {
   {
     //
   }
-  public String toString(){
+  
+  public String toString(){ // need to add an illegal state exception thing here
     String returnString = "";
     IntNode cursor;
   
