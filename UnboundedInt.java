@@ -79,8 +79,8 @@ public class UnboundedInt {
   }
   /*/ public UnboundedInt add(UnboundedInt userInput) {
       UnboundedInt intSum = new UnboundedInt();
-      UnboundedInt cursor1 = this.head;
-      UnboundedInt cursor2 = userInput.head;
+      IntNode cursor1 = this.head;
+      IntNode cursor2 = userInput.head;
       boolean cursor1Null = false;
       boolean cursor2Null = false;
       int carryOver = 0;
@@ -108,10 +108,20 @@ public class UnboundedInt {
         } 
         intSum.head.addAfter((String) sum)); typecasting it into a string
 
-        if(cursor.getLink() != null)
+        if(cursor1.getLink() == null){
+          cursor1Null = true;
+        } if(cursor2.getLink() == null){
+          cursor2Null = true;
+        }
 
+        if(cursor1Null == false){
+          cursor1 = cursor1.getLink();
+        } if(cursor2Null == false){
+          cursor1 = cursor2.getLink();
+        }
+      } // end of while loop
       
-  
+      return intSum;
   }/*/ 
   public void advance()
   {
